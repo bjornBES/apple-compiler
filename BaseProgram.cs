@@ -7,6 +7,7 @@ namespace apple_compiler
     {
         public string help;
         public string costomMacroFile = @"C:\Users\bjornBEs\source\repos\test apple compiler\macro.m";
+        public string costomMacroDir = @"C:\Users\bjornBEs\source\repos\test apple compiler";
         public bool MacroFileHasTestin;
         public string costomProgramFile = @"C:\Users\bjornBEs\source\repos\test apple compiler\program.apple";
         public string propath = @"\Engine_Develop\Apple_Compiler";
@@ -23,10 +24,12 @@ namespace apple_compiler
         public int[] listNum = new int[5000];
         public conpiler conpiler;
         public macro macro;
+        public BaseOutProgram BaseOutProgram;
         public void PBStart()
         {
             conpiler = new conpiler();
             macro = new macro();
+            BaseOutProgram = new BaseOutProgram();
         }
         public void Writeline(string line)
         {

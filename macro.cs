@@ -17,12 +17,13 @@ namespace apple_compiler
         Program Program = new Program();
         string macropath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) +
             @"\Engine_Develop\Apple_Compiler\macros\";
+        public string dirMacroPath;
         public conpiler conpiler;
-        public macroInfo[] Macros = new macroInfo[1];
+        public macroInfo[] Macros;
         public macro()
         {
         }
-        public bool hastest(bool macro, bool program, string macropath)
+        public bool hastest(string macropath)
         {
             if (File.ReadAllText(macropath) != "")
             {
@@ -31,9 +32,13 @@ namespace apple_compiler
             else
                 return false;
         }
-        public void GetMacro()
+            DirectoryInfo directoryInfo;
+        public void GetMacro(bool MacroHasText)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(macropath);
+            if (hastest(dirMacroPath) != true)
+                directoryInfo = new DirectoryInfo(macropath);
+            else
+                directoryInfo = new DirectoryInfo(dirMacroPath);
             FileInfo[] files = directoryInfo.GetFiles();
             int Le = files.Length;
             int Tole = 0;

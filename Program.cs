@@ -14,7 +14,9 @@ namespace apple_compiler
         {
             PBStart();
             macro.conpiler = conpiler;
-            MacroFileHasTestin = macro.hastest(true, false, costomMacroFile);
+            macro.dirMacroPath = costomMacroDir;
+            MacroFileHasTestin = macro.hastest(costomMacroFile);
+            BaseOutProgram.start();
             if (MacroFileHasTestin != true)
             {
                 Writeline("starting program...");
@@ -32,7 +34,10 @@ namespace apple_compiler
                 DoSwitch(User);
             }
             else
-                Writeline("has text");
+                for (int i = 0; i < BaseOutProgram.L; i++)
+                {
+                    DoSwitch(BaseOutProgram.GetOut(i));
+                }
             update();
         }
         public void DoSwitch(string User)
@@ -44,13 +49,13 @@ namespace apple_compiler
                     break;
                 case "macro":
                     startmakemacro();
-                    macro.GetMacro();
+                    macro.GetMacro(MacroFileHasTestin);
                     break;
                 case "help":
                     Writeline(help);
                     break;
                 case "rmacro":
-                    macro.GetMacro();
+                    macro.GetMacro(MacroFileHasTestin);
                     Writeline("what macro");
                     Console.Write("$macro #");
                     int user = toint(Console.ReadLine());

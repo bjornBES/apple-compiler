@@ -15,14 +15,19 @@ namespace apple_compiler
         /// all the code the program.apple file
         /// </summary>
         public string[] ProgramFileCode;
+        public int L;
         public void start()
         {
             Program = new Program();
-            ProgramFileCode = File.ReadAllText(baseProgram.costomProgramFile).Split(',');
-            for (int i = 0; i < ProgramFileCode.Length; i++)
-            {
-                Program.DoSwitch(ProgramFileCode[i]);
-            }
+            L = GetCode().Length;
+        }
+        public string GetOut(int i)
+        {
+            return GetCode()[i];
+        }
+        public string[] GetCode()
+        {
+            return File.ReadAllText(baseProgram.costomProgramFile).Split(',');
         }
     }
 }
