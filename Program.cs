@@ -14,9 +14,14 @@ namespace apple_compiler
         {
             PBStart();
             macro.conpiler = conpiler;
-            macro.dirMacroPath = costomMacroDir;
+            macro.dirMacroPath = costomFiles;
             MacroFileHasTestin = macro.hastest(costomMacroFile);
+            BaseOutProgram.HasText = MacroFileHasTestin;
             BaseOutProgram.start();
+            for (int i = 0; i < listNum.Length; i++)
+            {
+                listNum[i] = 5000;
+            }
             if (MacroFileHasTestin != true)
             {
                 Writeline("starting program...");
@@ -141,7 +146,7 @@ namespace apple_compiler
             if (File.Exists(MacropathFull))
             {
                 File.WriteAllText(MacropathFull, "");
-                File.WriteAllText(MacropathFull, "$" + MacroName + "\r\n" + "[\r\n");
+                File.WriteAllText(MacropathFull, "$" + MacroName + "\r\n" + "[");
             }
             else
             {

@@ -15,9 +15,9 @@ namespace apple_compiler
             for (int i = 0; i < Length; i++)
             {
                 string[] oneS = line[i].Split('"');
-                if(oneS[0].Length != 0)
+                if (oneS[0].Length != 0)
                     if (oneS[0][oneS[0].Length - 1] == ' ')
-                        oneS[0] = oneS[0].Remove(oneS[0].Length-1);
+                        oneS[0] = oneS[0].Remove(oneS[0].Length - 1);
                 switch (oneS[0])
                 {
                     default:

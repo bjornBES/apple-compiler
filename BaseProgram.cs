@@ -6,13 +6,14 @@ namespace apple_compiler
     public class BaseProgram
     {
         public string help;
-        public string costomMacroFile = @"C:\Users\bjornBEs\source\repos\test apple compiler\macro.m";
-        public string costomMacroDir = @"C:\Users\bjornBEs\source\repos\test apple compiler";
+        public string costomFiles = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) +
+            @"\Engine_Develop\Apple_Compiler\test_apple_compiler\";
+        public string costomMacroFile = "macro.m";
+        public string costomProgramFile = @"program.apple";
         public bool MacroFileHasTestin;
-        public string costomProgramFile = @"C:\Users\bjornBEs\source\repos\test apple compiler\program.apple";
         public string propath = @"\Engine_Develop\Apple_Compiler";
         public string Wpropath = @"Engine_Develop\Apple_Compiler";
-        public string macropath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + 
+        public string macropath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) +
             @"\Engine_Develop\Apple_Compiler\macros\";
         public string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public bool dir = false;

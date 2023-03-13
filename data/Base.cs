@@ -17,18 +17,18 @@ namespace BEs.mathF.data
     public class Base
     {
         public static int Index;
-        public static string[ ] DBaseName = {
+        public static string[] DBaseName = {
         "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", "",
         "", "", "", "", "", "", "", "", "", ""};
-        public static Object[ ] DBaseValues = {
+        public static Object[] DBaseValues = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        public static types[ ] DBaseTypes = new types[50];
+        public static types[] DBaseTypes = new types[50];
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +11,7 @@ namespace apple_compiler
     {
         BaseProgram baseProgram = new BaseProgram();
         Program Program;
+        public bool HasText { get; set; }
         /// <summary>
         /// all the code the program.apple file
         /// </summary>
@@ -23,11 +24,17 @@ namespace apple_compiler
         }
         public string GetOut(int i)
         {
-            return GetCode()[i];
+            if (HasText == true)
+                return GetCode()[i];
+            else
+                return "";
         }
         public string[] GetCode()
         {
-            return File.ReadAllText(baseProgram.costomProgramFile).Split(',');
+            if (HasText == true)
+                return File.ReadAllText(baseProgram.costomProgramFile).Split(',');
+            else
+                return new[] { "", ""};
         }
     }
 }

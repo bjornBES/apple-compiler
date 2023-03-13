@@ -8,8 +8,8 @@ namespace BEs.mathF.data
     {
         static int StoreLimit { get; } = 25;
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\private\Password\data.txt";
-        public static string[ ] LT = new string[100];
-        public static string[ ] LTSet = new string[100];
+        public static string[] LT = new string[100];
+        public static string[] LTSet = new string[100];
         public static int LTSetI;
         public static void LoadData()
         {
@@ -53,14 +53,14 @@ namespace BEs.mathF.data
         }
         public static void ResetData()
         {
-            string[ ] Text = { "" };
+            string[] Text = { "" };
             File.WriteAllLines(path, Text);
             Index = 0;
             for (int i = 0; i < DBaseName.Length; i++)
             {
-                DBaseName[i] ="";
-                DBaseValues[i] ="";
-                DBaseTypes[i] =types.none;
+                DBaseName[i] = "";
+                DBaseValues[i] = "";
+                DBaseTypes[i] = types.none;
             }
         }
         public static void Set(string name, Object value, types type)
@@ -68,11 +68,11 @@ namespace BEs.mathF.data
             DBaseName[Index] = name;
             DBaseValues[Index] = value;
             DBaseTypes[Index] = type;
-            string[ ] Text = { File.ReadAllText(path) + " Index:" + Index +
+            string[] Text = { File.ReadAllText(path) + " Index:" + Index +
                     ".Type:" + type.ToString() +
                     ".Name:" + name +
                     ".Value:" + value + " "};
-            LTSet[LTSetI]=Text[0];
+            LTSet[LTSetI] = Text[0];
             LTSetI++;
             Index++;
         }
@@ -99,9 +99,9 @@ namespace BEs.mathF.data
                     DBaseName[i] = "";
                     DBaseValues[i] = "";
                     DBaseTypes[i] = types.none;
-                    DBaseName[i]=DBaseName[II];
+                    DBaseName[i] = DBaseName[II];
                     DBaseValues[i] = DBaseValues[II];
-                    DBaseTypes[i]=DBaseTypes[II];
+                    DBaseTypes[i] = DBaseTypes[II];
                     DBaseName[II] = "";
                     DBaseValues[II] = 0;
                     DBaseTypes[II] = types.none;
@@ -119,9 +119,9 @@ namespace BEs.mathF.data
                     DBaseName[i] = "";
                     DBaseValues[i] = "";
                     DBaseTypes[i] = types.none;
-                    DBaseName[i]=DBaseName[II];
+                    DBaseName[i] = DBaseName[II];
                     DBaseValues[i] = DBaseValues[II];
-                    DBaseTypes[i]=DBaseTypes[II];
+                    DBaseTypes[i] = DBaseTypes[II];
                     DBaseName[II] = "";
                     DBaseValues[II] = 0;
                     DBaseTypes[II] = types.none;

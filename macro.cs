@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace apple_compiler
 {
     public class macroInfo
@@ -25,14 +24,17 @@ namespace apple_compiler
         }
         public bool hastest(string macropath)
         {
-            if (File.ReadAllText(macropath) != "")
+            bool re = false;
+            if(File.Exists(macropath) == true)
             {
-                return true;
+                if (File.ReadAllText(macropath) != "")
+                {
+                    re = true;
+                }
             }
-            else
-                return false;
+            return re;
         }
-            DirectoryInfo directoryInfo;
+        DirectoryInfo directoryInfo;
         public void GetMacro(bool MacroHasText)
         {
             if (hastest(dirMacroPath) != true)
@@ -58,6 +60,7 @@ namespace apple_compiler
                 Tole++;
             }
         }
+
         public void Read(int tag)
         {
             for (int i = 0; i < Macros.Length; i++)
